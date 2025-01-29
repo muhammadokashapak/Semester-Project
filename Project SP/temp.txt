@@ -1,0 +1,125 @@
+ASSIGNMENT # 03
+
+[C:\Users\Madiha\Desktop\University_of_Engineering_and_Technology_Peshawar_logo.svg.png]
+
+Object Oriented Programming
+
+Submitted by: Jawad Irfan
+
+Registration No: 21PWCSE2009
+
+Class Section: B
+
+Submitted To: Dr. Nasru minallah
+
+“On my honor, as student of University of Engineering and Technology, I
+have neither given nor received unauthorized assistance on this academic
+
+DEPARTMENT OF COMPUTER SYSTEMS ENGINEERING,
+
+(DCSE)
+
+UNIVERSITY OF ENGINEERING AND TECHNOLOGY (UET), PESHAWAR
+
+Q: Create a class called set ………………………… otherwise 0 is stored…
+
+CODE
+
+class Set {
+
+private:
+
+int arr[50];
+
+public:
+
+Set () { // No-argument constructor
+
+for (int i = 0; i < 50; i++) {
+
+arr [i] = 0;
+
+}
+
+}
+
+void insert (int value) { // insert () function
+
+if (value >= 0 && value < 50) {
+
+arr [value] = 1;
+
+}
+
+}
+
+void delete (int value) { // delete () function
+
+if (value >= 0 && value < 50) {
+
+arr [value] = 0;
+
+}
+
+}
+
+Set operator + ( const Set& other) { // Overloaded operator+ for union
+
+Set result;
+
+for (int i = 0; i < 50; i++) {
+
+result.arr[i] = arr[i] || other.arr[i];
+
+}
+
+return result;
+
+}
+
+Set operator*(const Set& other) { // Over loaded operator* for
+intersection
+
+Set result;
+
+for (int i = 0; i < 50; i++) {
+
+result.arr[i] = arr[i] && other.arr[i];
+
+}
+
+return result;
+
+}
+
+Set operator~() { // Over loaded operator~ for complement
+
+Set result;
+
+for (int i = 0; i < 50; i++) {
+
+result.arr[i] = !arr[i];
+
+}
+
+return result;
+
+}
+
+void display() { // display () function
+
+for (int i = 0; i < 50; i++) {
+
+if (arr[i] == 1) {
+
+cout << i << " ";
+
+}
+
+}
+
+cout << endl;
+
+}
+
+};
